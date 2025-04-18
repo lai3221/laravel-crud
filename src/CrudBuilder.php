@@ -445,6 +445,7 @@ class CrudBuilder
             'redirectUrl' => $this->redirectUrl,
             'displaySearch' => $this->displaySearch,
             'displayFilters' => $this->displayFilters,
+            'addtional' => $this->addtional,
         ];
     }
 
