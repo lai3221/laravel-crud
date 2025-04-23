@@ -278,9 +278,11 @@ class CrudBuilder
     private function applyFieldFilter(Builder $query, $field, $fieldConfig, $attribute)
     {
         // Specify the table name or alias to avoid ambiguity
-        $table = $query->getModel()->getTable();
+       $table = $query->getModel()->getTable();
         $qualifiedField = "{$table}.{$field}";
-
+        $inputKey = $this->identifier.$attribute;
+        $values = $this->request->input($inputKey);
+        
         if (in_array($fieldConfig['filter'], ['like', 'ilike']) && $this->request->filled($this->identifier.$attribute)) {
             $query->where($qualifiedField, $fieldConfig['filter'], '%'.$this->request->input($this->identifier.$attribute).'%');
         } elseif ($fieldConfig['filter'] === 'between') {
@@ -292,6 +294,11 @@ class CrudBuilder
                 $query->where($qualifiedField, '>=', $this->request->input($this->identifier.$startKey));
             } elseif ($this->request->filled($this->identifier.$endKey)) {
                 $query->where($qualifiedField, '<=', $this->request->input($this->identifier.$endKey));
+            }
+        } elseif (($fieldConfig['filter']) === 'in' && $values) {
+            $values = explode(',', $values);
+            if ($values) {
+                $query->whereIn($qualifiedField, $values);
             }
         } elseif ($this->request->filled($this->identifier.$attribute)) {
             $query->where($qualifiedField, $fieldConfig['filter'] ?? '=', $this->request->input($this->identifier.$attribute));
