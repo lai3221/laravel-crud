@@ -1,8 +1,8 @@
 <?php
 
-namespace BalajiDharma\LaravelCrud\Column;
+namespace Lai3221\LaravelCrud\Column;
 
-use BalajiDharma\LaravelCrud\Column;
+use Lai3221\LaravelCrud\Column;
 
 class ListColumn extends Column
 {

@@ -1,6 +1,6 @@
 <?php
 
-use BalajiDharma\LaravelCrud\CrudBuilder;
+use Lai3221\LaravelCrud\CrudBuilder;
 
 if (! function_exists('crud')) {
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace BalajiDharma\LaravelCrud;
+namespace Lai3221\LaravelCrud;
 
-use BalajiDharma\LaravelFormBuilder\Facades\FormBuilder;
+use Lai3221\LaravelFormBuilder\Facades\FormBuilder;
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -278,11 +278,11 @@ class CrudBuilder
     private function applyFieldFilter(Builder $query, $field, $fieldConfig, $attribute)
     {
         // Specify the table name or alias to avoid ambiguity
-       $table = $query->getModel()->getTable();
+        $table = $query->getModel()->getTable();
         $qualifiedField = "{$table}.{$field}";
         $inputKey = $this->identifier.$attribute;
         $values = $this->request->input($inputKey);
-        
+
         if (in_array($fieldConfig['filter'], ['like', 'ilike']) && $this->request->filled($this->identifier.$attribute)) {
             $query->where($qualifiedField, $fieldConfig['filter'], '%'.$this->request->input($this->identifier.$attribute).'%');
         } elseif ($fieldConfig['filter'] === 'between') {
@@ -452,7 +452,6 @@ class CrudBuilder
             'redirectUrl' => $this->redirectUrl,
             'displaySearch' => $this->displaySearch,
             'displayFilters' => $this->displayFilters,
-            'addtional' => $this->addtional,
         ];
     }
 

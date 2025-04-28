@@ -1,6 +1,6 @@
 <?php
 
-namespace BalajiDharma\LaravelCrud;
+namespace Lai3221\LaravelCrud;
 
 class CrudHelper
 {

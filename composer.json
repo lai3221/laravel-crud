@@ -1,12 +1,12 @@
 {
-    "name": "balajidharma/laravel-crud",
-    "description": "Laravel CRUD - Build List and Detail View",
+    "name": "lai3221/laravel-crud",
+    "description": "Forked and customized Laravel CRUD",
     "license": "MIT",
     "keywords": ["crud","laravel","laravel-crud", "laravel-framework"],
     "authors": [
         {
-            "name": "Balaji Dharmaraja",
-            "homepage": "https://github.com/balajidharma"
+            "name": "lai3221",
+            "homepage": "https://github.com/lai3221"
         }
     ],
     "require": {
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "BalajiDharma\\LaravelCrud\\": "src"
+            "Lai3221\\LaravelCrud\\": "src"
         },
         "files": [
             "src/helpers.php"
@@ -24,7 +24,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "BalajiDharma\\LaravelCrud\\CrudServiceProvider"
+                "Lai3221\\LaravelCrud\\CrudServiceProvider"
             ]
         }
     }
