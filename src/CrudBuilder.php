@@ -2,7 +2,7 @@
 
 namespace Lai3221\LaravelCrud;
 
-use Lai3221\LaravelFormBuilder\Facades\FormBuilder;
+use BalajiDharma\LaravelFormBuilder\Facades\FormBuilder;
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
