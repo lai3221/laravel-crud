@@ -425,6 +425,7 @@ class CrudBuilder
         switch ($view) {
             case 'list':
                 return view('crud::list', array_merge([
+                    'addtional' => $this->addtional,
                     'items' => $this->items,
                 ]), $this->commonRenderData());
             case 'create':
